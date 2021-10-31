@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using S10DPA_NCORE.Domain.Core.Interfaces;
 using S10DPA_NCORE.Domain.Infrastructure.Data;
+using S10DPA_NCORE.Domain.Infrastructure.Mapping;
 using S10DPA_NCORE.Domain.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace S10DPA_NCORE.API
             });
             services.AddTransient<ICustomerRepository, CustomerRepository>();
 
-
+            services.AddAutoMapper(typeof(AutomapperProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

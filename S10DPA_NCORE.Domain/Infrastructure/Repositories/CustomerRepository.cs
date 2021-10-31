@@ -51,6 +51,7 @@ namespace S10DPA_NCORE.Domain.Infrastructure.Repositories
         public async Task<bool> Delete(int id)
         {
             var customer = await _context.Customer.FindAsync(id);
+            _context.Customer.Remove(customer);
             int countRows = await _context.SaveChangesAsync();
             return (countRows > 0);
         }
