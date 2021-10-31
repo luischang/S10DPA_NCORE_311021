@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using S10DPA_NCORE.Domain.Core.Entities;
+using S10DPA_NCORE.Domain.Core.Interfaces;
 using S10DPA_NCORE.Domain.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace S10DPA_NCORE.Domain.Infrastructure.Repositories
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private readonly SalesDBContext _context;
 
@@ -20,7 +21,7 @@ namespace S10DPA_NCORE.Domain.Infrastructure.Repositories
 
         public async Task<IEnumerable<Customer>> GetCustomers()
         {
-            return await _context.Customer.ToListAsync();        
+            return await _context.Customer.ToListAsync();
         }
 
         public async Task<Customer> GetCustomerById(int id)
@@ -31,7 +32,7 @@ namespace S10DPA_NCORE.Domain.Infrastructure.Repositories
         public async Task<bool> Insert(Customer customer)
         {
             _context.Customer.Add(customer);
-            int countRows =   await _context.SaveChangesAsync();
+            int countRows = await _context.SaveChangesAsync();
             return (countRows > 0);
         }
         public async Task<bool> Update(Customer customer)
