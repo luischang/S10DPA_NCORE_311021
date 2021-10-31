@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10DPA_NCORE.API", "S10DPA_NCORE.API\S10DPA_NCORE.API.csproj", "{B11D7FF9-6B90-4432-BBB3-7B03277C242D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10DPA_NCORE.Domain", "S10DPA_NCORE.Domain\S10DPA_NCORE.Domain.csproj", "{E3CFE1A5-60CB-46AF-A4FE-E71674193D93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B11D7FF9-6B90-4432-BBB3-7B03277C242D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11D7FF9-6B90-4432-BBB3-7B03277C242D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11D7FF9-6B90-4432-BBB3-7B03277C242D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11D7FF9-6B90-4432-BBB3-7B03277C242D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CFE1A5-60CB-46AF-A4FE-E71674193D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3CFE1A5-60CB-46AF-A4FE-E71674193D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CFE1A5-60CB-46AF-A4FE-E71674193D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CFE1A5-60CB-46AF-A4FE-E71674193D93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3473B5B-8C6D-4EF1-A9B2-4472B61CA329}
+	EndGlobalSection
+EndGlobal
