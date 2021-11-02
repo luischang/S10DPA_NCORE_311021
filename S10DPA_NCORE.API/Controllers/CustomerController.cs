@@ -17,11 +17,14 @@ namespace S10DPA_NCORE.API.Controllers
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
+        private readonly ICustomerService _customerService;
 
-        public CustomerController(ICustomerRepository customerRepository, IMapper mapper)
+        public CustomerController(ICustomerRepository customerRepository, IMapper mapper,
+            ICustomerService customerService)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
+            _customerService = customerService;
         }
 
         [HttpGet]
@@ -97,6 +100,15 @@ namespace S10DPA_NCORE.API.Controllers
             return NoContent();
         }
 
-
+        [HttpGet]
+        [Route("GetCustomerAndOrders/{id}")]
+        public async Task<IActionResult> GetCustomerAndOrders(int id)
+        {
+            var customerDTO = await _customerService.GetCustomerAndOrders(id);
+            if (customerDTO == null)
+                return NotFound();    
+            
+            return Ok(customerDTO);
+        }
     }
 }

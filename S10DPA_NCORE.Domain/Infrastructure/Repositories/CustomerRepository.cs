@@ -26,7 +26,7 @@ namespace S10DPA_NCORE.Domain.Infrastructure.Repositories
 
         public async Task<Customer> GetCustomerById(int id)
         {
-            return await _context.Customer.FindAsync(id);
+            return await _context.Customer.Include(x=>x.Order).ThenInclude(b=>b.OrderItem).Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<bool> Insert(Customer customer)

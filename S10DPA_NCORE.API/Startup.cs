@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using S10DPA_NCORE.Domain.Core.Interfaces;
+using S10DPA_NCORE.Domain.Core.Services;
 using S10DPA_NCORE.Domain.Infrastructure.Data;
 using S10DPA_NCORE.Domain.Infrastructure.Mapping;
 using S10DPA_NCORE.Domain.Infrastructure.Repositories;
@@ -42,6 +43,8 @@ namespace S10DPA_NCORE.API
                 options.UseSqlServer(Configuration.GetConnectionString("DevConnection"));
             });
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<ICustomerService, CustomerService>();
 
             services.AddAutoMapper(typeof(AutomapperProfile));
         }

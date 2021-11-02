@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace S10DPA_NCORE.Domain.Infrastructure.Mapping
 {
-    public class AutomapperProfile: Profile
+    public class AutomapperProfile : Profile
     {
         public AutomapperProfile()
         {
@@ -18,6 +18,19 @@ namespace S10DPA_NCORE.Domain.Infrastructure.Mapping
 
             CreateMap<CustomerPostDTO, Customer>();
             CreateMap<Customer, CustomerPostDTO>();
+
+            CreateMap<Customer, CustomerOrderDTO>();
+            CreateMap<CustomerOrderDTO, Customer>();
+
+            CreateMap<Customer, IEnumerable<CustomerOrderDTO>>();
+            CreateMap<IEnumerable<CustomerOrderDTO>, Customer>();
+
+            CreateMap<Order, OrderDTO>();
+            CreateMap<OrderDTO, Order>();
+
+            CreateMap<Order, OrderDetailsDTO>();
+            CreateMap<OrderDetailsDTO, Order>();
+
         }
 
 
