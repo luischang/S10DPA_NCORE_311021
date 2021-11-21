@@ -31,6 +31,16 @@ namespace S10DPA_NCORE.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecifiOrigin", builder =>
+                {
+                    builder.AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin();
+                });
+
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -60,6 +70,7 @@ namespace S10DPA_NCORE.API
             }
 
             app.UseRouting();
+            app.UseCors("AllowSpecifiOrigin");
 
             app.UseAuthorization();
 
